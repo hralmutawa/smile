@@ -1,0 +1,6 @@
+1) Populate the page with a 4x4 table (Create Element)
+2) Each element should have an ID assoiciated with it
+4) Create a random variable
+5) Create a function that checks the element position with the random number
+6) If the element ID matches the number, player wins
+7) Prompt to play again
