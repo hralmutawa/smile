@@ -42,7 +42,7 @@ for(i=1; i<=4; i++){ 								// row creation loop
 /*TABLE CREATION */
 
 function winLose(img, imgId){
-	if(gameOver) var playAgain = window.confirm('Would you like to play again?');
+	if(gameOver) var playAgain = window.confirm('Would you like to play again?'); // if the game is over, ask the user to play again
 	if(playAgain) location.reload();
 	console.log(playAgain);
 	imgId = parseInt(imgId); 						//imgId is passed as a string. Convert it to int before comparing. Alternatively, can use == to compare as it disregards data date
@@ -63,7 +63,7 @@ function winLose(img, imgId){
 		winOrLose.innerHTML = 'win.';
 		finalScore = ++attempts;
 		attemptCountDisplay.innerHTML = 'Final Score: ' + finalScore +' attempts'; // display the final score
-		gameOver = true;
+		gameOver = true; //stop timeout counter
 		clearTimeout(stopTime);
 	} else if(img.class != "sad" && gameOver==false) { //if the image is not already sad and the game is still running
 		if(attempts < 4) {
@@ -77,7 +77,7 @@ function winLose(img, imgId){
 			attemptCountDisplay.innerHTML = "You've used up all of your attempts. Click on any face to play again.";
 			winOrLose.innerHTML = '<span style="color:red;">lose.</span>'; //you lose prompt
 			gameOver = true;
-			clearTimeout(stopTime);
+			clearTimeout(stopTime); //stop the timeout counter
 		}
 	}
 }
