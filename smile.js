@@ -77,8 +77,7 @@ function winLose(img, imgId){
 			attemptCountDisplay.innerHTML = "You've used up all of your attempts. Click on any face to play again.";
 			winOrLose.innerHTML = '<span style="color:red;">lose.</span>'; //you lose prompt
 			gameOver = true;
-			clearTimeout(stopTime);	
-			//testing commit
+			clearTimeout(stopTime);
 		}
 	}
 }
