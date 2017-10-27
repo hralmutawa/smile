@@ -78,6 +78,7 @@ function winLose(img, imgId){
 			winOrLose.innerHTML = '<span style="color:red;">lose.</span>'; //you lose prompt
 			gameOver = true;
 			clearTimeout(stopTime);	
+			//testing commit
 		}
 	}
 }
