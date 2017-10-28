@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script>
+function f1(n) {
+	switch(n){
+		case 0: return ""; break;
+		case 1: return " One"; break;
+		case 2: return " Two"; break;
+		case 3: return " Three"; break;
+		case 4: return " Four"; break;
+		case 5: return " Five"; break;
+		case 6: return " Six"; break;
+		case 7: return " Seven"; break;
+		case 8: return " Eight"; break;
+		case 9: return " Nine"; break;
+	}
+}
+
+function f2(n){
+switch(n){
+	case 11: return " Eleven"; break;
+	case 12: return " Twelve"; break;
+	case 13: return " Thirteen"; break;
+	case 14: return " Fourteen"; break;
+	case 15: return " Fifteen"; break;
+	case 16: return " Sixteen"; break;
+	case 17: return " Seventeen"; break;
+	case 18: return " Eighteen"; break;
+	case 19: return " Nineteen"; break;
+}
+}
+
+function f3(n){
+switch(n){
+	case 1: return " Ten"; break;
+	case 2: return " Twenty"; break;
+	case 3: return " Thirty"; break;
+	case 4: return " Fourty"; break;
+	case 5: return " Fifty"; break;
+	case 6: return " Sixty"; break;
+	case 7: return " Seventy"; break;
+	case 8: return " Eighty"; break;
+	case 9: return " Ninety"; break;
+}
+}
+
+function convert(n){
+
+	if (n<10) {
+		txt = f1(parseInt(n));
+		document.getElementById('target').innerHTML = txt;
+		return txt;
+	}
+
+	else if(n<20){
+		txt = f2(parseInt(n));
+		document.getElementById('target').innerHTML = txt;
+		return txt;
+	}
+
+	else if(n<100){
+		txt = f3(parseInt(n/10)) + f1(parseInt(n%10));
+		document.getElementById('target').innerHTML = txt;
+		return txt;
+	}
+
+	else if(n<1000){
+		txt = f1(parseInt(n/100)) + " Hundred " + convert(n%100);
+		document.getElementById('target').innerHTML = txt;
+		return txt;
+	}
+
+		else if(n<1000000){
+		txt = convert(n/1000) + " Thousand " + convert(n%1000);
+		document.getElementById('target').innerHTML = txt;
+		return txt;
+}
+		else if(n<1000000000){
+		txt = convert(n/1000000) + " Million " + convert(n%1000000);
+		document.getElementById('target').innerHTML = txt;
+		return txt;
+}
+}
+
+
+
+</script>
+</head>
+<body>
+<input type="text" name="number" id="num">
+<input type="button" name="ok" onclick="convert(document.getElementById('num').value)" value="Decimal To Word!">
+<p id="target">Hello There</p>
+</body>
+</html>
